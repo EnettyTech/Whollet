@@ -5,34 +5,71 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEDF1f9),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 40),
-                      child: Text(
-                        "Welcome Back!",
-                        style: TextStyle(
-                            fontSize: 26.0, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    Image.asset(
-                      "assets/images/login/login.png",
-                      alignment: Alignment.center,
-                    )
-                  ],
-                )),
-            Expanded(
-              flex: 5,
-              child: FormInput(),
+        backgroundColor: Color(0xFFEDF1f9),
+        body: SafeArea(
+          child: Stack(children: [
+            Column(
+              children: [
+                Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 40),
+                          child: Text(
+                            "Welcome Back!",
+                            style: TextStyle(
+                                fontSize: 26.0, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/images/login/login.png",
+                          alignment: Alignment.center,
+                        )
+                      ],
+                    ))
+              ],
+            ),
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: SingleChildScrollView(
+                child: Test(),
+              ),
             )
-          ],
-        ),
+          ]),
+        ));
+  }
+}
+
+class Test extends StatelessWidget {
+  const Test({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints:
+          BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.black12,
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.black12,
+              child: FormInput(),
+            ),
+          )
+        ],
       ),
     );
   }
