@@ -67,13 +67,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  keyboard_visibility:
+  keyboard_utils:
     dependency: "direct main"
     description:
-      name: keyboard_visibility
+      name: keyboard_utils
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.6"
+    version: "1.2.4"
   matcher:
     dependency: transitive
     description:
@@ -179,4 +179,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.7.0 <3.0.0"
-  flutter: ">=0.1.4 <2.0.0"
+  flutter: ">=1.10.0 <2.0.0"

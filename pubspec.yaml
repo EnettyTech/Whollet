@@ -26,8 +26,7 @@ dependencies:
   redux_persist: ^0.8.3
   redux: ^3.0.0
   flutter_redux: ^0.5.3
-  keyboard_visibility: any
-
+  keyboard_utils: ^1.2.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
