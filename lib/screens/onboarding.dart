@@ -4,6 +4,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:whollet/models/app_state.dart';
 import 'package:whollet/screens/login.dart';
+import 'package:whollet/screens/signUp.dart';
 import 'package:whollet/screens/welcome.dart';
 import 'package:whollet/widgets/slide_dot.dart';
 import '../widgets/slide_item.dart';
@@ -45,7 +46,8 @@ class _OnboardingState extends State<Onboarding> {
           initialRoute: '/',
           routes: {
             '/welcome': (context) => Welcome(),
-            '/login': (context) => LoginScreen()
+            '/login': (context) => LoginScreen(),
+            '/signUp': (context) => SignUpScreen()
           },
           home: Scaffold(
               backgroundColor: Color(0xFFEDF1F9),

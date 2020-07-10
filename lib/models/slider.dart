@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utilities/images.dart';
 
 class SlideInterface {
   final String imageUrl;
@@ -12,20 +13,20 @@ class SlideInterface {
 
 final sliderData = [
   SlideInterface(
-      imageUrl: "assets/images/onboarding/desktop.png",
+      imageUrl: ImageApp().onboarding_desktop,
       title: "Welcome to Whollet",
       description: "Manage all your crypto assets! It’s simple and easy!"),
   SlideInterface(
-      imageUrl: "assets/images/onboarding/idea.png",
+      imageUrl: ImageApp().onboarding_idea,
       title: "Nice and Tidy Crypto Portfolio!",
       description: "Keep BTC, ETH, XRP, and many other ERC-20 based tokens."),
   SlideInterface(
-      imageUrl: "assets/images/onboarding/social.png",
+      imageUrl: ImageApp().onboarding_social,
       title: "Receive and Send Money to Friends!",
       description:
           "Send crypto to your friends with a personal message attached."),
   SlideInterface(
-      imageUrl: "assets/images/onboarding/mobile.png",
+      imageUrl: ImageApp().onboarding_omobile,
       title: "Your Safety is Our Top Priority",
       description:
           "Our top-notch security features will keep you completely safe.")

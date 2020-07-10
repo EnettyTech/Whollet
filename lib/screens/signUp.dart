@@ -4,7 +4,7 @@ import 'package:keyboard_utils/keyboard_options.dart';
 import 'package:keyboard_utils/keyboard_utils.dart';
 import 'package:keyboard_utils/keyboard_listener.dart';
 import 'package:keyboard_utils/widgets.dart';
-import '../utilities/images.dart';
+import 'package:whollet/utilities/images.dart';
 
 class KeyboardBloc {
   KeyboardUtils _keyboardUtils = KeyboardUtils();
@@ -33,7 +33,7 @@ class KeyboardBloc {
   }
 }
 
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,13 +49,13 @@ class LoginScreen extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 50),
                           child: Text(
-                            "Welcome Back!",
+                            "Create Account",
                             style: TextStyle(
                                 fontSize: 26.0, fontWeight: FontWeight.w600),
                           ),
                         ),
                         Image.asset(
-                          ImageApp().login_logo,
+                          ImageApp().signUp_office,
                           alignment: Alignment.center,
                         )
                       ],
@@ -174,9 +174,7 @@ class _FormInputState extends State<FormInput> {
                                 ),
                                 Container(
                                     child: MaterialButton(
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/signUp');
-                                  },
+                                  onPressed: () {},
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:

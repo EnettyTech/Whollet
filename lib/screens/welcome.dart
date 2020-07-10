@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whollet/utilities/images.dart';
 
 class Welcome extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class Welcome extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        child: Image.asset('assets/images/welcome/logo.png'),
+                        child: Image.asset(ImageApp().welcome_logo),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 20),
