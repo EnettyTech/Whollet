@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
-import 'package:whollet/models/app_state.dart';
-import 'package:whollet/screens/login.dart';
-import 'package:whollet/screens/signUp.dart';
-import 'package:whollet/screens/welcome.dart';
 import 'package:whollet/widgets/slide_dot.dart';
 import '../widgets/slide_item.dart';
 import '../models/slider.dart';
 
 class Onboarding extends StatefulWidget {
-  final Store<AppState> store;
-  Onboarding({this.store});
-  _OnboardingState createState() => _OnboardingState(store: store);
+  _OnboardingState createState() => _OnboardingState();
 }
 
 typedef void MyCallback(int foo);
 
 class _OnboardingState extends State<Onboarding> {
-  final Store<AppState> store;
-  _OnboardingState({this.store});
   int index = 0;
   final PageController pageController = PageController();
 
@@ -38,41 +28,29 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
-    return StoreProvider<AppState>(
-        store: store,
-        child: MaterialApp(
-          themeMode: ThemeMode.dark,
-          title: "",
-          initialRoute: '/',
-          routes: {
-            '/welcome': (context) => Welcome(),
-            '/login': (context) => LoginScreen(),
-            '/signUp': (context) => SignUpScreen()
-          },
-          home: Scaffold(
-              backgroundColor: Color(0xFFEDF1F9),
-              body: AnnotatedRegion<SystemUiOverlayStyle>(
-                value: SystemUiOverlayStyle.dark,
-                child: Column(
-                  children: <Widget>[
-                    SlideImage(
-                      urlImage: sliderData[index].imageUrl,
-                      length: sliderData.length,
-                      onChangePage: onChangePage,
-                      isShowSkip: index < sliderData.length - 1 ? true : false,
-                      pageController: pageController,
-                    ),
-                    Expanded(
-                        flex: 5,
-                        child: BodySlide(
-                          onPress: next,
-                          info: sliderData[index],
-                          index: index,
-                          length: sliderData.length,
-                        ))
-                  ],
-                ),
-              )),
+    return Scaffold(
+        backgroundColor: Color(0xFFEDF1F9),
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.dark,
+          child: Column(
+            children: <Widget>[
+              SlideImage(
+                urlImage: sliderData[index].imageUrl,
+                length: sliderData.length,
+                onChangePage: onChangePage,
+                isShowSkip: index < sliderData.length - 1 ? true : false,
+                pageController: pageController,
+              ),
+              Expanded(
+                  flex: 5,
+                  child: BodySlide(
+                    onPress: next,
+                    info: sliderData[index],
+                    index: index,
+                    length: sliderData.length,
+                  ))
+            ],
+          ),
         ));
   }
 }

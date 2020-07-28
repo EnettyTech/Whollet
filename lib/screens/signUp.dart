@@ -96,11 +96,11 @@ class _FormInputState extends State<FormInput> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            flex: 5,
+            flex: 4,
             child: Container(),
           ),
           Expanded(
-              flex: 5,
+              flex: 6,
               child: Transform.translate(
                 offset: Offset(0, -widget.keyboardConfig.keyboardHeight),
                 child: Container(
@@ -124,7 +124,15 @@ class _FormInputState extends State<FormInput> {
                             children: [
                               TextField(
                                 decoration:
-                                    InputDecoration(labelText: "Email address"),
+                                    InputDecoration(labelText: "First Name"),
+                              ),
+                              TextField(
+                                decoration:
+                                    InputDecoration(labelText: "Last Name"),
+                              ),
+                              TextField(
+                                decoration:
+                                    InputDecoration(labelText: "Email Address"),
                               ),
                               TextField(
                                 obscureText: true,
@@ -139,16 +147,6 @@ class _FormInputState extends State<FormInput> {
                                   ),
                                 ),
                               ),
-                              Align(
-                                  alignment: FractionalOffset.bottomRight,
-                                  child: MaterialButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "Forgot your password?",
-                                      style:
-                                          TextStyle(color: Color(0xFFF347AF0)),
-                                    ),
-                                  ))
                             ],
                           ),
                         ),
@@ -162,7 +160,7 @@ class _FormInputState extends State<FormInput> {
                                     color: Color(0xFFF347AF0),
                                     onPressed: () {},
                                     child: Text(
-                                      'Login',
+                                      "Lest's Get Started",
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     shape: RoundedRectangleBorder(
@@ -180,12 +178,12 @@ class _FormInputState extends State<FormInput> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: <Widget>[
-                                      Text("Don't have an account?",
+                                      Text("Already have an account?",
                                           style: TextStyle(
                                               fontSize: 15,
                                               color: Colors.black,
                                               fontWeight: FontWeight.normal)),
-                                      Text(" Sign up",
+                                      Text(" Login",
                                           style: TextStyle(
                                             fontSize: 15,
                                             color: Color(0xFFF347AF0),
